@@ -12,6 +12,10 @@
 		92F2973D1F37A104000A4015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F2973B1F37A104000A4015 /* Main.storyboard */; };
 		92F2973F1F37A104000A4015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F2973E1F37A104000A4015 /* Assets.xcassets */; };
 		92F297421F37A104000A4015 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F297401F37A104000A4015 /* LaunchScreen.storyboard */; };
+		92F9EECE1F37DCDF000EB0C0 /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F9EECC1F37DCDF000EB0C0 /* SpotifyAudioPlayback.framework */; };
+		92F9EECF1F37DCDF000EB0C0 /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F9EECD1F37DCDF000EB0C0 /* SpotifyAuthentication.framework */; };
+		92F9EED11F37E04B000EB0C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F9EED01F37E04B000EB0C0 /* AVFoundation.framework */; };
+		92F9EED31F37E05B000EB0C0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F9EED21F37E05B000EB0C0 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		92F297411F37A104000A4015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92F297431F37A104000A4015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92F297491F37A1E6000A4015 /* HealthTunes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthTunes.entitlements; sourceTree = "<group>"; };
+		92F9EECC1F37DCDF000EB0C0 /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
+		92F9EECD1F37DCDF000EB0C0 /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
+		92F9EED01F37E04B000EB0C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		92F9EED21F37E05B000EB0C0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +38,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F9EED31F37E05B000EB0C0 /* SystemConfiguration.framework in Frameworks */,
+				92F9EED11F37E04B000EB0C0 /* AVFoundation.framework in Frameworks */,
+				92F9EECE1F37DCDF000EB0C0 /* SpotifyAudioPlayback.framework in Frameworks */,
+				92F9EECF1F37DCDF000EB0C0 /* SpotifyAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +82,10 @@
 		92F2974A1F37A1E6000A4015 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92F9EED21F37E05B000EB0C0 /* SystemConfiguration.framework */,
+				92F9EED01F37E04B000EB0C0 /* AVFoundation.framework */,
+				92F9EECC1F37DCDF000EB0C0 /* SpotifyAudioPlayback.framework */,
+				92F9EECD1F37DCDF000EB0C0 /* SpotifyAuthentication.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,8 +293,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 985WCWGJY4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HealthTunes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = Picone.HealthTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -290,8 +311,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 985WCWGJY4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HealthTunes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = Picone.HealthTunes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -317,6 +343,7 @@
 				92F297481F37A104000A4015 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
