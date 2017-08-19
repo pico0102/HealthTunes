@@ -186,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C92295DB1F48CA7000813D61 /* BridgeViewController.m in Sources */,
+				924B3F1B1F48C96C001B44BD /* PlaylistViewController.swift in Sources */,
 				92F2973A1F37A104000A4015 /* ViewController.swift in Sources */,
 				924B3F191F48C95F001B44BD /* HRViewController.swift in Sources */,
 				924B3F1D1F48C977001B44BD /* LoginViewController.swift in Sources */,
