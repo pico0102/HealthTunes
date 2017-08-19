@@ -14,7 +14,8 @@ class LoginViewController: UIViewController, SPTAudioStreamingPlaybackDelegate, 
     var session:SPTSession!
     var player: SPTAudioStreamingController?
     var loginUrl: URL?
-    
+    var playing = false
+    var firstPlay = true
     @IBOutlet weak var loginBtn: UIButton!
     @IBAction func loginBtnPressed(_ sender: Any) {
         if UIApplication.shared.openURL(loginUrl!) {
@@ -22,6 +23,18 @@ class LoginViewController: UIViewController, SPTAudioStreamingPlaybackDelegate, 
                 // To do - build in error handling
             }
         }
+        playBtn.isHidden = false
+    }
+    
+    @IBOutlet weak var playBtn: UIButton!
+    
+    @IBAction func playpauseMusic(_ sender: Any) {
+        if (self.player?.playbackState.isPlaying)! {
+            self.player?.setIsPlaying(false, callback: nil)
+        }else{
+            self.player?.setIsPlaying(true, callback: nil)
+        }
+        
     }
     func setup()
     {
@@ -33,7 +46,7 @@ class LoginViewController: UIViewController, SPTAudioStreamingPlaybackDelegate, 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        playBtn.isHidden = true
         // Do any additional setup after loading the view.
         setup()
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateAfterFirstLogin), name: NSNotification.Name(rawValue: "loginSuccessfull"), object:nil)
@@ -70,7 +83,10 @@ class LoginViewController: UIViewController, SPTAudioStreamingPlaybackDelegate, 
             if (error != nil) {
                 print("playing!")
             }
+            
         })
+        
+        
     }
     
 

@@ -19,7 +19,8 @@
 		92F9EECF1F37DCDF000EB0C0 /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F9EECD1F37DCDF000EB0C0 /* SpotifyAuthentication.framework */; };
 		92F9EED11F37E04B000EB0C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F9EED01F37E04B000EB0C0 /* AVFoundation.framework */; };
 		92F9EED31F37E05B000EB0C0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F9EED21F37E05B000EB0C0 /* SystemConfiguration.framework */; };
-		C92295DB1F48CA7000813D61 /* BridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92295DA1F48CA7000813D61 /* BridgeViewController.m */; };
+		C9186D9D1F48E0AF00CDB685 /* BridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92295DA1F48CA7000813D61 /* BridgeViewController.m */; };
+		C9186D9F1F48E17700CDB685 /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9186D9E1F48E17700CDB685 /* SpotifyMetadata.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		92F9EECD1F37DCDF000EB0C0 /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		92F9EED01F37E04B000EB0C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		92F9EED21F37E05B000EB0C0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C9186D9E1F48E17700CDB685 /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
 		C92295D81F48CA7000813D61 /* HealthTunes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HealthTunes-Bridging-Header.h"; sourceTree = "<group>"; };
 		C92295D91F48CA7000813D61 /* BridgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeViewController.h; sourceTree = "<group>"; };
 		C92295DA1F48CA7000813D61 /* BridgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeViewController.m; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9186D9F1F48E17700CDB685 /* SpotifyMetadata.framework in Frameworks */,
 				92F9EED31F37E05B000EB0C0 /* SystemConfiguration.framework in Frameworks */,
 				92F9EED11F37E04B000EB0C0 /* AVFoundation.framework in Frameworks */,
 				92F9EECE1F37DCDF000EB0C0 /* SpotifyAudioPlayback.framework in Frameworks */,
@@ -98,6 +101,7 @@
 		92F2974A1F37A1E6000A4015 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9186D9E1F48E17700CDB685 /* SpotifyMetadata.framework */,
 				92F9EED21F37E05B000EB0C0 /* SystemConfiguration.framework */,
 				92F9EED01F37E04B000EB0C0 /* AVFoundation.framework */,
 				92F9EECC1F37DCDF000EB0C0 /* SpotifyAudioPlayback.framework */,
@@ -185,7 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C92295DB1F48CA7000813D61 /* BridgeViewController.m in Sources */,
+				C9186D9D1F48E0AF00CDB685 /* BridgeViewController.m in Sources */,
 				924B3F1B1F48C96C001B44BD /* PlaylistViewController.swift in Sources */,
 				92F2973A1F37A104000A4015 /* ViewController.swift in Sources */,
 				924B3F191F48C95F001B44BD /* HRViewController.swift in Sources */,

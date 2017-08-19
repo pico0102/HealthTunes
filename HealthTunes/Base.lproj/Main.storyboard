@@ -70,7 +70,14 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginBtnPressed:" destination="iYZ-ZR-e2c" eventType="touchUpInside" id="TeK-iQ-vKc"/>
-                                    <segue destination="sTl-iK-4Jv" kind="show" id="SAk-2S-9vJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMR-NZ-Qed">
+                                <rect key="frame" x="146" y="436" width="75" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play/Pause"/>
+                                <connections>
+                                    <action selector="playpauseMusic:" destination="iYZ-ZR-e2c" eventType="touchUpInside" id="kkP-sd-KkD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,11 +85,12 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="DEq-JY-s3T" id="kSb-UE-3bu"/>
+                        <outlet property="playBtn" destination="vMR-NZ-Qed" id="hn7-Pw-nOL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d57-3n-2JN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="125"/>
+            <point key="canvasLocation" x="1108" y="124.58770614692655"/>
         </scene>
         <!--Playlist-->
         <scene sceneID="ujx-s9-NbU">
