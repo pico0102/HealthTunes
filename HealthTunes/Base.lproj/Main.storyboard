@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="377" y="125"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="kPz-el-vsU">
             <objects>
-                <viewController id="iYZ-ZR-e2c" sceneMemberID="viewController">
+                <viewController id="iYZ-ZR-e2c" customClass="LoginViewController" customModule="HealthTunes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N68-R5-sg9"/>
                         <viewControllerLayoutGuide type="bottom" id="8cc-rI-2kI"/>
@@ -83,7 +83,7 @@
         <!--Playlist-->
         <scene sceneID="ujx-s9-NbU">
             <objects>
-                <viewController id="UcZ-mJ-0xY" sceneMemberID="viewController">
+                <viewController id="UcZ-mJ-0xY" customClass="PlaylistViewController" customModule="HealthTunes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lFK-Av-Xtb"/>
                         <viewControllerLayoutGuide type="bottom" id="ARD-td-0EL"/>
@@ -111,7 +111,7 @@
         <!--HR-->
         <scene sceneID="c9m-ud-JaJ">
             <objects>
-                <viewController id="L1E-gH-KYu" sceneMemberID="viewController">
+                <viewController id="L1E-gH-KYu" customClass="HRViewController" customModule="HealthTunes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bQa-eh-Htm"/>
                         <viewControllerLayoutGuide type="bottom" id="Caa-Mn-baL"/>
