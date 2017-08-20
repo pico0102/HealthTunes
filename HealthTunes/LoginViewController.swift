@@ -15,8 +15,7 @@ class LoginViewController: UIViewController, SPTAudioStreamingPlaybackDelegate, 
     var player: SPTAudioStreamingController?
     var searcher: SPTSearch?
     var loginUrl: URL?
-    var playing = false
-    var firstPlay = true
+    var myPlaylist : [SPTPartialTrack] = []
     @IBOutlet weak var loginBtn: UIButton!
     @IBAction func loginBtnPressed(_ sender: Any) {
         if UIApplication.shared.openURL(loginUrl!) {
@@ -37,6 +36,16 @@ class LoginViewController: UIViewController, SPTAudioStreamingPlaybackDelegate, 
         }
         
     }
+    @IBOutlet weak var searchField: UITextField!
+    
+    @IBOutlet weak var submitBtn: UIButton!
+    
+    @IBAction func submitPressed(_ sender: Any) {
+        let data = searchField.text!
+        print(data)
+        searchForSongs(query: data)
+    }
+    
     func setup()
     {
         SPTAuth.defaultInstance().clientID = "1cd28b8d23924de3ae88658b97cca968"
@@ -86,17 +95,48 @@ class LoginViewController: UIViewController, SPTAudioStreamingPlaybackDelegate, 
 //            }
 //            
 //        })
+        loginBtn.isHidden = true
+        //searchForSongs(query: "rock")
+        
 
-        SPTSearch.perform(withQuery: "rock", queryType: SPTSearchQueryType.queryTypeTrack, accessToken: self.session.accessToken, callback: { (result)
+        
+        
+    }
+    
+    func searchForSongs(query: String)
+    {
+        
+        SPTSearch.perform(withQuery: query, queryType: SPTSearchQueryType.queryTypeTrack, accessToken: self.session.accessToken, callback: { (result)
             in
             if (result != nil) {
-                print(((result.1! as! SPTListPage).items[0] as! SPTPartialTrack).playableUri)
+                let listOfItems = (result.1! as! SPTListPage).items
+                
+                print(listOfItems!.count)
+                for song in listOfItems!
+                {
+                    self.myPlaylist.append((song as! SPTPartialTrack))
+                }
+                let firstTrack = (listOfItems?[0] as! SPTPartialTrack).playableUri
+                print(String(describing: firstTrack!))
+                let myTrack = String(describing: firstTrack!)
+                self.playSongFromURI(uri: myTrack)
+                print(self.myPlaylist)
             }
         })
         
     }
     
-
+    func playSongFromURI(uri: String)
+    {
+        self.player?.playSpotifyURI(uri, startingWith: 0, startingWithPosition: 0, callback: { (error) in
+            if (error != nil) {
+                print("playing!")
+            }
+            else {
+                print(error)
+            }
+        })
+    }
     /*
     // MARK: - Navigation
 

@@ -80,12 +80,32 @@
                                     <action selector="playpauseMusic:" destination="iYZ-ZR-e2c" eventType="touchUpInside" id="kkP-sd-KkD"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qc-Ac-NFv">
+                                <rect key="frame" x="135" y="137" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchFieldEntry:" destination="iYZ-ZR-e2c" eventType="editingDidEnd" id="U2z-Xq-kkn"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTc-9e-tM6">
+                                <rect key="frame" x="159" y="166" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitPressed:" destination="iYZ-ZR-e2c" eventType="touchUpInside" id="5iM-18-g7e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="DEq-JY-s3T" id="kSb-UE-3bu"/>
                         <outlet property="playBtn" destination="vMR-NZ-Qed" id="hn7-Pw-nOL"/>
+                        <outlet property="searchField" destination="8qc-Ac-NFv" id="vZa-89-YPi"/>
+                        <outlet property="submitBtn" destination="UTc-9e-tM6" id="8eR-eT-1Ql"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d57-3n-2JN" userLabel="First Responder" sceneMemberID="firstResponder"/>
