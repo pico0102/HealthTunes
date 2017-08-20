@@ -13,6 +13,7 @@ class LoginViewController: UIViewController, SPTAudioStreamingPlaybackDelegate, 
     var auth = SPTAuth.defaultInstance()!
     var session:SPTSession!
     var player: SPTAudioStreamingController?
+    var searcher: SPTSearch?
     var loginUrl: URL?
     var playing = false
     var firstPlay = true
@@ -79,13 +80,19 @@ class LoginViewController: UIViewController, SPTAudioStreamingPlaybackDelegate, 
     func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
         // after a user authenticates a session, the SPTAudioStreamingController is then initialized and this method called
         print("logged in")
-        self.player?.playSpotifyURI("spotify:track:58s6EuEYJdlb0kO7awm3Vp", startingWith: 0, startingWithPosition: 0, callback: { (error) in
-            if (error != nil) {
-                print("playing!")
+//        self.player?.playSpotifyURI("spotify:track:58s6EuEYJdlb0kO7awm3Vp", startingWith: 0, startingWithPosition: 0, callback: { (error) in
+//            if (error != nil) {
+//                print("playing!")
+//            }
+//            
+//        })
+
+        SPTSearch.perform(withQuery: "rock", queryType: SPTSearchQueryType.queryTypeTrack, accessToken: self.session.accessToken, callback: { (result)
+            in
+            if (result != nil) {
+                print(((result.1! as! SPTListPage).items[0] as! SPTPartialTrack).playableUri)
             }
-            
         })
-        
         
     }
     
