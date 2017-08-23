@@ -102,7 +102,21 @@ class LoginViewController: UIViewController, SPTAudioStreamingPlaybackDelegate, 
         
         
     }
-    
+    func decideSearch(bpm: Double)
+    {
+        if(bpm < 80)
+        {
+            searchForSongs(query: "relaxing")
+        }
+        else if(bpm < 100)
+        {
+            searchForSongs(query: "training")
+        }
+        else
+        {
+            searchForSongs(query: "running")
+        }
+    }
     func searchForSongs(query: String)
     {
         
