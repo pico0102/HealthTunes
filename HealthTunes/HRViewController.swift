@@ -7,9 +7,19 @@
 //
 
 import UIKit
+import HealthKit
 
 class HRViewController: UIViewController {
+    
+    let healthManager:HealthKitManager = HealthKitManager()
+    var hr: HKQuantitySample?
+    
+    @IBOutlet weak var authorizeButton: UIButton!
+    @IBOutlet weak var bpmLabel: UILabel!
 
+    @IBAction func authorizeTapped(_ sender: Any) {
+        getHealthKitPermission()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +31,60 @@ class HRViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(<#T##animated: Bool##Bool#>)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    func setHeight() {
+        // Create the HKSample for Height.
+        let hrSample = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)
+        
+        // Call HealthKitManager's getSample() method to get the user's height.
+        self.healthManager.getHR(sampleType: hrSample!, completion: { (userHr, error) -> Void in
+            
+            if( error != nil ) {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            
+            var hrString = ""
+            
+            
+            //let heartRateUnit: HKUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
+            //let heartRateQuantity: HKQuantity = HKQuantity(unit: heartRateUnit, doubleValue: hrSample)
+            
+            
+            self.hr = userHr as? HKQuantitySample
+            hrString = (userHr?.description)!
+            print("HR: " + hrString)
+            //hrString = self.hr
+            
+            
+            // Set the label to reflect the user's height.
+            DispatchQueue.main.async(execute: { () -> Void in
+                self.bpmLabel.text = hrString
+            })
+        })
+        
+    }
+    
 
+    func getHealthKitPermission() {
+       
+        
+        // Seek authorization in HealthKitManager.swift.
+        healthManager.authorizeHealthKit { (authorized,  error) -> Void in
+            if authorized {
+                 self.authorizeButton.isHidden = true
+                // Get and set the user's height.
+                self.setHeight()
+            } else {
+                if error != nil {
+                    print(error!)
+                }
+                print("Permission denied.")
+            }
+        }
+    }
 }

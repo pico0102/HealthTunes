@@ -10,7 +10,8 @@
 		924B3F191F48C95F001B44BD /* HRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B3F181F48C95F001B44BD /* HRViewController.swift */; };
 		924B3F1B1F48C96C001B44BD /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B3F1A1F48C96C001B44BD /* PlaylistViewController.swift */; };
 		924B3F1D1F48C977001B44BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B3F1C1F48C977001B44BD /* LoginViewController.swift */; };
-		925076081F48DFEF00E9200B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925076071F48DFEF00E9200B /* HealthKit.framework */; };
+		925076081F48DFEF00E9200B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925076071F48DFEF00E9200B /* HealthKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		9250760A1F48E08600E9200B /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925076091F48E08600E9200B /* HealthKitManager.swift */; };
 		92F297381F37A104000A4015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F297371F37A104000A4015 /* AppDelegate.swift */; };
 		92F2973A1F37A104000A4015 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F297391F37A104000A4015 /* ViewController.swift */; };
 		92F2973D1F37A104000A4015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F2973B1F37A104000A4015 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		924B3F1A1F48C96C001B44BD /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		924B3F1C1F48C977001B44BD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		925076071F48DFEF00E9200B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		925076091F48E08600E9200B /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		92F297341F37A104000A4015 /* HealthTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F297371F37A104000A4015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92F297391F37A104000A4015 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				92F297491F37A1E6000A4015 /* HealthTunes.entitlements */,
 				92F297371F37A104000A4015 /* AppDelegate.swift */,
 				92F297391F37A104000A4015 /* ViewController.swift */,
+				925076091F48E08600E9200B /* HealthKitManager.swift */,
 				924B3F181F48C95F001B44BD /* HRViewController.swift */,
 				924B3F1A1F48C96C001B44BD /* PlaylistViewController.swift */,
 				924B3F1C1F48C977001B44BD /* LoginViewController.swift */,
@@ -183,6 +186,7 @@
 			files = (
 				924B3F1B1F48C96C001B44BD /* PlaylistViewController.swift in Sources */,
 				92F2973A1F37A104000A4015 /* ViewController.swift in Sources */,
+				9250760A1F48E08600E9200B /* HealthKitManager.swift in Sources */,
 				924B3F191F48C95F001B44BD /* HRViewController.swift in Sources */,
 				924B3F1D1F48C977001B44BD /* LoginViewController.swift in Sources */,
 				92F297381F37A104000A4015 /* AppDelegate.swift in Sources */,
