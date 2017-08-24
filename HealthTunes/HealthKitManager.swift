@@ -13,7 +13,11 @@ class HealthKitManager: NSObject {
     
     let healthKitStore: HKHealthStore = HKHealthStore()
     
+    
+
     func authorizeHealthKit(completion: ((_ success: Bool, _ error: NSError?) -> Void)!) {
+        
+        //******* It successfully goes into this ****
         
         // State the health data type(s) we want to read from HealthKit.
         let healthDataToRead = Set(arrayLiteral: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!)
@@ -25,7 +29,12 @@ class HealthKitManager: NSObject {
         }
         
         // Request authorization to read and/or write the specific data.
-        healthKitStore.requestAuthorization(toShare: nil, read: healthDataToRead) { _, _ in }
+        healthKitStore.requestAuthorization(toShare: nil, read: healthDataToRead) { (success, error) -> Void in
+            if( completion != nil  && error != nil) {
+                completion(success, error! as NSError)
+            }
+        }
+
     }
     
     
