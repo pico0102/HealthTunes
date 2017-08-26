@@ -4,6 +4,7 @@
 //
 //  Created by Anthony Picone on 8/19/17.
 //  Copyright © 2017 Anthony Picone. All rights reserved.
+//  Code templates taken from - https://www.appcoda.com/healthkit-introduction/
 //
 
 import UIKit
@@ -67,6 +68,7 @@ class HRViewController: UIViewController {
             // Set the label to reflect the user's height.
             DispatchQueue.main.async(execute: { () -> Void in
                 //self.bpmLabel.text = "TEST"
+                print("HI")
             })
         })
         
@@ -84,7 +86,7 @@ class HRViewController: UIViewController {
             print("test")
             
             if authorized {
-                
+                print("test")
                 // Get and set the user's height.
                 self.setHR()
             } else {

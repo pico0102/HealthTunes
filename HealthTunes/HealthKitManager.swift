@@ -4,6 +4,7 @@
 //
 //  Created by Anthony Picone on 8/19/17.
 //  Copyright © 2017 Anthony Picone. All rights reserved.
+//  Code templates taken from - https://www.appcoda.com/healthkit-introduction/
 //
 
 import Foundation
@@ -17,8 +18,6 @@ class HealthKitManager: NSObject {
 
     func authorizeHealthKit(completion: ((_ success: Bool, _ error: NSError?) -> Void)!) {
         
-        //******* It successfully goes into this ****
-        
         // State the health data type(s) we want to read from HealthKit.
         let healthDataToRead = Set(arrayLiteral: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!)
         
@@ -30,7 +29,7 @@ class HealthKitManager: NSObject {
         
         // Request authorization to read and/or write the specific data.
         healthKitStore.requestAuthorization(toShare: nil, read: healthDataToRead) { (success, error) -> Void in
-            if( completion != nil  && error != nil) {
+            if( completion != nil && error != nil) {
                 completion(success, error! as NSError)
             }
         }
